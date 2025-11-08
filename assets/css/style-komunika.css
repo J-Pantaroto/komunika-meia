@@ -1,0 +1,130 @@
+:root {
+  --komunika-green: #00FF66;
+  --komunika-dark: #0B0B0B;
+  --komunika-light: #F1F1F1;
+  --komunika-text: #1B1B1B;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--komunika-light);
+  color: var(--komunika-text);
+}
+
+.bg-komunika {
+
+  background-color: var(--komunika-green) !important;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: url("../img/bg-hero.png") center / cover no-repeat fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+  }
+}
+
+.swatch {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  background-color: var(--color);
+  border: 2px solid #ccc;
+  transition: var(--transition);
+}
+
+.swatch:hover {
+  transform: scale(1.1);
+}
+
+.team-card .ratio {
+  border-radius: 8px 8px 0 0;
+}
+
+.navbar {
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.8);
+}
+
+.nav-link {
+  color: var(--komunika-dark);
+}
+
+/* --- SLIDER DA EQUIPE --- */
+.team-slider {
+  display: flex;
+  gap: 2.5rem;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+  user-select: none;
+}
+
+.team-card {
+  flex: 0 0 280px;
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  cursor: pointer;
+}
+
+.team-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.team-card .ratio {
+  border-radius: 14px 14px 0 0;
+}
+
+.team-slider::-webkit-scrollbar {
+  display: none;
+}
+.team-slider {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.btn-komunika-prev,
+.btn-komunika-next {
+  background: none;
+  color: var(--komunika-green);
+  border: none;
+  font-size: 2rem;
+  width: 48px;
+  height: 48px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.btn-komunika-prev:hover,
+.btn-komunika-next:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
