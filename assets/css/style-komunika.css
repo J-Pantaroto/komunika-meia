@@ -128,3 +128,15 @@ body {
   transform: scale(1.1);
 }
 
+.ratio-3x4 { --bs-aspect-ratio: 133.333333%; }
+
+
+.team-card .ratio img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
